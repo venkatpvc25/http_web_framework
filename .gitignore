@@ -1,0 +1,34 @@
+# Java build output
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven specific
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar  # keep the Maven wrapper jar if you use it
+
+# Gradle specific
+.gradle/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar  # keep Gradle wrapper
+
+# IDEs and editors
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*.bak

@@ -1,5 +1,0 @@
-app:
-  name: WebFramework
-  port: 8081
-  version: 1.0
-  context: /app
