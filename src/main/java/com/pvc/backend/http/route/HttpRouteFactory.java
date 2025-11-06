@@ -1,4 +1,4 @@
-package com.pvc.backend.http;
+package com.pvc.backend.http.route;
 
 import java.lang.reflect.Method;
 import java.util.Collections;
@@ -8,15 +8,14 @@ import java.util.Objects;
 import com.pvc.backend.Route;
 import com.pvc.backend.annotations.Controller;
 import com.pvc.backend.http.params.ParamResolverFactory;
-import com.pvc.backend.http.route.HttpMethodResolveDispatcher;
 import com.pvc.backend.model.RouteParam;
 
-public class RouteFactory {
+public class HttpRouteFactory {
 
     private final ParamResolverFactory paramResolverFactory;
-    private final HttpMethodResolveDispatcher routeDispatcher;
+    private final HttpMethodDispatcher routeDispatcher;
 
-    public RouteFactory(ParamResolverFactory paramResolverFactory, HttpMethodResolveDispatcher routeDispatcher) {
+    public HttpRouteFactory(ParamResolverFactory paramResolverFactory, HttpMethodDispatcher routeDispatcher) {
         this.paramResolverFactory = Objects.requireNonNull(paramResolverFactory);
         this.routeDispatcher = Objects.requireNonNull(routeDispatcher);
     }

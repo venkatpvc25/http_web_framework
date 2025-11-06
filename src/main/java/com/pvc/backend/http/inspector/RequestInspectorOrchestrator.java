@@ -1,4 +1,4 @@
-package com.pvc.backend.http.info;
+package com.pvc.backend.http.inspector;
 
 import java.io.IOException;
 
@@ -23,7 +23,6 @@ public class RequestInspectorOrchestrator {
             } else if (s instanceof RequestBodyInpsector && !hasBody) {
                 hasBody = s.matches(exchange, templatePath);
             } else {
-                // generic call for other strategies that may produce side-effects or flags
                 s.matches(exchange, templatePath);
             }
             if (hasPath && hasQuery && hasBody)

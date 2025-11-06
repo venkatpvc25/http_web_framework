@@ -1,4 +1,4 @@
-package com.pvc.backend.http.info;
+package com.pvc.backend.http.inspector;
 
 public class RequestInfo {
     public final boolean hasPathParams;

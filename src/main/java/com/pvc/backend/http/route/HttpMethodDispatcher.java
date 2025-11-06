@@ -7,10 +7,10 @@ import java.util.Optional;
 
 import com.pvc.backend.Route;
 
-public class HttpMethodResolveDispatcher {
+public class HttpMethodDispatcher {
     private final HttpMethodResolverRegistry registry;
 
-    public HttpMethodResolveDispatcher(HttpMethodResolverRegistry registry) {
+    public HttpMethodDispatcher(HttpMethodResolverRegistry registry) {
         this.registry = registry;
     }
 

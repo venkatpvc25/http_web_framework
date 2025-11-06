@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.pvc.backend.config.YamlConfigLoader;
+import com.pvc.backend.http.request.RequestParserDispatcher;
+import com.pvc.backend.http.request.RequestParserRegistry;
 import com.pvc.backend.model.Response;
 import com.pvc.backend.utils.ResponseUtils;
 import com.sun.net.httpserver.HttpExchange;
@@ -36,6 +38,10 @@ public class HttpRequestHandler implements HttpHandler {
         log.info("route: {}", request.getRequestURI().getPath());
         if (route != null) {
             try {
+
+                RequestParserDispatcher dispatcher = new RequestParserDispatcher(
+                        new RequestParserRegistry<>());
+
                 Response<?> response = route.invoke();
                 responseUtils.send(request, response);
             } catch (Exception e) {

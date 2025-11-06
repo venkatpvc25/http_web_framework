@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.pvc.backend.constants.RequestDataType;
 
-public class RequestDataParserRegistry<T> {
+public class RequestParserRegistry<T> {
     private final Map<RequestDataType, RequestDataParser<T, ?>> registry = new EnumMap<>(RequestDataType.class);
 
     public void register(RequestDataType type, RequestDataParser<T, ?> parser) {

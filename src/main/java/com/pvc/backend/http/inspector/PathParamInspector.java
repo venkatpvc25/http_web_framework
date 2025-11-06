@@ -1,4 +1,4 @@
-package com.pvc.backend.http.info;
+package com.pvc.backend.http.inspector;
 
 import com.sun.net.httpserver.HttpExchange;
 

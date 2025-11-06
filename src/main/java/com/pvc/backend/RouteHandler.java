@@ -14,14 +14,14 @@ import com.pvc.backend.annotations.PathVariable;
 import com.pvc.backend.annotations.RequestBody;
 import com.pvc.backend.annotations.RequestParam;
 import com.pvc.backend.constants.RequestDataType;
-import com.pvc.backend.http.RouteFactory;
 import com.pvc.backend.http.params.ParamResolverDispatcher;
 import com.pvc.backend.http.params.ParamResolverFactory;
 import com.pvc.backend.http.params.ParamResolverRegistry;
 import com.pvc.backend.http.route.GetMethodResolver;
-import com.pvc.backend.http.route.HttpMethodResolveDispatcher;
+import com.pvc.backend.http.route.HttpMethodDispatcher;
 import com.pvc.backend.http.route.HttpMethodResolver;
 import com.pvc.backend.http.route.HttpMethodResolverRegistry;
+import com.pvc.backend.http.route.HttpRouteFactory;
 import com.pvc.backend.model.RouteParam;
 import com.pvc.backend.constants.MethodType;
 
@@ -64,10 +64,11 @@ public class RouteHandler {
         hMap.put(GetMapping.class, new GetMethodResolver());
         HttpMethodResolverRegistry httpMethodResolverRegistry = new HttpMethodResolverRegistry();
         httpMethodResolverRegistry.registerAll(hMap);
-        HttpMethodResolveDispatcher httpMethodResolveDispatcher = new HttpMethodResolveDispatcher(
+        HttpMethodDispatcher httpMethodResolveDispatcher = new HttpMethodDispatcher(
                 httpMethodResolverRegistry);
 
-        RouteFactory routeFactory = new RouteFactory(new ParamResolverFactory(dispatcher), httpMethodResolveDispatcher);
+        HttpRouteFactory routeFactory = new HttpRouteFactory(new ParamResolverFactory(dispatcher),
+                httpMethodResolveDispatcher);
 
         List<RouteParam> routeParams = new ArrayList<>();
         for (Method method : clazz.getDeclaredMethods()) {

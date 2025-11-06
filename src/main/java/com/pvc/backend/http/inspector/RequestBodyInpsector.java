@@ -1,4 +1,4 @@
-package com.pvc.backend.http.info;
+package com.pvc.backend.http.inspector;
 
 import java.io.IOException;
 import java.util.List;

@@ -10,10 +10,10 @@ import com.sun.net.httpserver.HttpExchange;
 
 import com.pvc.backend.exceptions.RequestDataNotValidException;
 
-public class PathParamDataParser implements RequestDataParser<HttpExchange, Map<String, Object>> {
+public class PathParamParser implements RequestDataParser<HttpExchange, Map<String, Object>> {
     private final String tempaltePath;
 
-    PathParamDataParser(String templatePath) {
+    PathParamParser(String templatePath) {
         this.tempaltePath = templatePath;
     }
 

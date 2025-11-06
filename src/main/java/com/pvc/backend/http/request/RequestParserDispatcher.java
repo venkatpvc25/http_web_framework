@@ -3,10 +3,10 @@ package com.pvc.backend.http.request;
 import com.pvc.backend.constants.RequestDataType;
 import com.sun.net.httpserver.HttpExchange;
 
-public class RequestDataParserDispatcher {
-    private final RequestDataParserRegistry<HttpExchange> registry;
+public class RequestParserDispatcher {
+    private final RequestParserRegistry<HttpExchange> registry;
 
-    public RequestDataParserDispatcher(RequestDataParserRegistry<HttpExchange> registry) {
+    public RequestParserDispatcher(RequestParserRegistry<HttpExchange> registry) {
         this.registry = registry;
     }
 
